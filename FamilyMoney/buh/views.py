@@ -8,7 +8,7 @@ def HomePageView(request):
     sources = SourceMoney.objects.all()
     total = SourceMoney.objects.aggregate(Sum('sum'))
 
-    return render(request, 'index.html', {
+    return render(request, 'buh/index.html', {
         'sources': sources,
         'total': total.get('sum__sum')
     })
@@ -16,7 +16,7 @@ def HomePageView(request):
 def AddTransaction(request):
     sources = Trans.objects.all()
 
-    return render(request, 'add_trans.html', {
+    return render(request, 'buh/add_trans.html', {
         'sources': sources
 
     })
