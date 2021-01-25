@@ -1,0 +1,12 @@
+{% block title %}
+Операции со средствами
+{% endblock %}
+{% block content %}
+  <table border="1">
+        <tr><th>Операция</th><th>Тип средств</th><th>Дата</th><th>Сумма</th><th>Комментарий</th></tr>
+        {% for source in sources %}
+        <tr><td>{{ source.trans_type }}</td><td>{{ source.trans_source }}</td><td>{{ source.trans_date }}</td><td>{{ source.trans_sum }}</td><td>{{ source.comment }}</td></tr>
+        {% endfor %}
+  </table>
+
+{% endblock %}

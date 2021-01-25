@@ -1,0 +1,19 @@
+{% block title %}
+Остатки средств
+{% endblock %}
+{% block content %}
+    {% if sources %}
+        <table border="1">
+            <tr><th>Владелец</th><th>Источник</th><th>Остаток</th></tr>
+            {% for source in sources %}
+                <tr><td>{{ source.user }}</td><td>{{ source.type }}</td><td>{{ source.sum }}</td></tr>
+            {% endfor %}
+            <tr><td colspan="2">Итого</td><td>{{ total }}</td></tr>
+        </table>
+    {% else %}
+        <p>Записей нет</p>
+    {% endif %}
+
+{# Это перенести в блок подключаемый ко всем страницам #}
+<p><a href="/add">Добавление</a></p>
+{% endblock %}
